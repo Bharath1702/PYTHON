@@ -1,61 +1,15 @@
-octl_num = int(input("Enter some random number = "))
-
-k = 0
-
-Hexa_deciml = ['0']*50
-
-deciml_num = 0
-
-tempry = 0
-
-print( "The Hexadecimal value of the given octal number {", octl_num, "} is: ")
-
-while octl_num != 0:
-
- a = (octl_num % 10)
-
- b = pow(8, tempry)*a
-
- deciml_num = deciml_num+b
-
- tempry += 1
-
- 
-
- octl_num = octl_num // 10
-
-while deciml_num != 0:
-
- 
-
- remindr = deciml_num % 16
-
- if remindr < 10:
-
- 
-
- chrvalue = chr(remindr+48)
-
- 
-
- Hexa_deciml[k] = chrvalue
-
- k += 1
-
- else: chrvalue = chr(remindr+55)
-
- 
-
- Hexa_deciml[k] = chrvalue
-
- 
-
- k += 1
-
- deciml_num //= 16
-
-for itr in range(k-1, -1, -1):
-
- 
-
- print(Hexa_deciml[itr], end='')
+s = input("Enter a sentence: ")
+w, d, u, l = 0, 0, 0, 0
+l_w = s.split()
+w = len(l_w)
+for c in s:
+ if c.isdigit():
+ d = d + 1
+ elif c.isupper():
+ u = u + 1
+ elif c.islower():
+ l = l + 1
+print ("No of Words: ", w)
+print ("No of Digits: ", d)
+print ("No of Uppercase letters: ", u)
+print ("No of Lowercase letters: ", l)
